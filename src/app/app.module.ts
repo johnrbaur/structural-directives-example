@@ -4,11 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { JbIfDirective } from './jb-if.directive';
+import { JbForDirective } from './jb-for.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
+    JbIfDirective,
+    JbForDirective
   ],
   imports: [
     BrowserModule,
