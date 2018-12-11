@@ -13,4 +13,8 @@ export class EmployeeListComponent {
 
   constructor() { }
 
+  hasLongName(employee: Employee): boolean {
+    return employee.last_name.length > 6;
+  }
+
 }

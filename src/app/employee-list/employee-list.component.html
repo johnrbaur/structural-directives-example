@@ -1,28 +1,11 @@
 <button (click)="showTitle = !showTitle">Toggle title display</button>
 
 
-<h1 *ngIf="showTitle">Structural Directives</h1>
+<h1 *jbIf="showTitle">Structural Directives</h1>
 
 
-<!--
-<ng-template [ngIf]="showTitle">
-  <h1>Structural Directives (De-sugared)</h1>
-</ng-template>
- -->
-
-
-<!--
-<ng-template>
-  <h1>This does nothing</h1>
-</ng-template>
- -->
-
-
- <!-- <div *ngFor="let emp of employees">{{emp.first_name}}</div> -->
-
-
-<!--
-<ng-template ngFor let-emp [ngForOf]="employees">
-  <div>{{emp.first_name}}</div>
-</ng-template>
- -->
+<ul>
+  <li *jbFor="let emp in employees if hasLongName; index as i">
+    {{i}}: {{emp.first_name}} {{emp.last_name}}
+  </li>
+</ul>

@@ -1,9 +1,10 @@
-import { Directive, TemplateRef, ViewContainerRef, OnChanges } from '@angular/core';
+import { Directive, TemplateRef, ViewContainerRef, OnChanges, Input } from '@angular/core';
 
 @Directive({
   selector: '[jbIf]'
 })
 export class JbIfDirective implements OnChanges {
+  @Input() jbIf: boolean;
 
   constructor(
     // Represents an embedded template that can be used to instantiate embedded views
@@ -13,7 +14,10 @@ export class JbIfDirective implements OnChanges {
   ) { }
 
   ngOnChanges() {
-
+    this.viewContainerRef.clear();
+    if (this.jbIf) {
+      this.viewContainerRef.createEmbeddedView(this.templateRef);
+    }
   }
 
 }
